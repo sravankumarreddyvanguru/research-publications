@@ -1,16 +1,85 @@
 <%- include("partials/header"); -%>
 <form action="/details" method="post">
-    <label for="firstName">First Name</label>
+
+  <label class="required" for="employeecode">Employee Code</label>
+  <br>
+  <input  name="employeeCode" id="employeecode" size="25" required>
+  <br> <br>
+  <label class="required" for="title">Title</label>
+    <select name="title" id="title">
+      <option value="Dr.">Dr.</option>
+      <option value="Mr.">Mr.</option>
+      <option value="Ms.">Ms.</option>
+      <option value="Mrs.">Mrs.</option>
+    </select>
+  <br>
+  <br>
+
+    <label class="required" for="Surname">Surname</label>
     <br>
-    <input  name="firstName" id="firstName" size="25" >
+    <input  name="surName" id="Surname" size="25" required>
+<br> <br>
+<label class="required" for="Middlename">Middle Name</label>
 <br>
-  <label for="lastName">Last Name</label>
+<input  name="middleName" id="Middlename" size="25" required>
+<br> <br>
+  <label class="required" for="lastName">Last Name</label>
   <br>
-  <input  name="lastName" size="25">
+  <input  name="lastName" id="lastName" size="25" required>
   <br>
+<br>
+<label class="required" for="Displayname">Display Name</label>
+<br>
+<input  name="displayName" id="Displayname" size="25" required>
+<br> <br>
+<label class="required" for="Email">Email id</label>
+<input type="email" name="emailId" id="Email" size="25" required>
+<br><br>
+<label class="required" for="mobile">Mobile No</label>
+<input type="tel" name="mobileNUmber" id="mobile" pattern="[0-9]{10}" size="25" required>
+<br><br>
+<label class="required" for="AlteranteEmail">Alternate Email id</label>
+<input type="email" name="alternateEmailId" id="AlteranteEmail" size="25" required>
+<br><br>
+<label class="required" for="contactNo">Emergency Contact No</label>
+<input type="tel" name="emergencyContactNo" id="contactNo" pattern="[0-9]{10}" size="25" required>
+<br><br>
+<label class="required" for="gender">Gender</label>
+  <select name="gender" id="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    </select>
+<br><br>
+
+<label class="required" for="dept">Department</label>
+  <select name="department" id="dept">
+    <option value="CSE">CSE</option>
+    <option value="IT">IT</option>
+    <option value="CSBS">CSBS</option>
+  </select>
+<br>
+<br>
+<label class="required" for="designation">Designation</label>
+  <select name="designation" id="designation">
+    <option value="professor">Professor</option>
+    <option value="Asst.Professor">Asst.Professor</option>
+    <option value="Assoc.Professor">Assoc.Professor</option>
+  </select>
+
+<br><br>
+<label class="required" for="EmployeeType">Employee Type</label>
+  <select name="employeeType" id="EmployeeType">
+    <option value="teaching">Teaching</option>
+    <option value="non-teaching">Non-Teaching</option>
+    </select>
+
+<br><br>
+
+<label class="required" for="img">Upload Photo:</label>
+  <input type="file" id="img" name="image" accept="image/*">
+<p>(.jpg only)</p>
+
+<br><br>
 <button type="submit" name="button">Submit</button>
 </form>
-
-
-
 <%- include("partials/footer"); -%>

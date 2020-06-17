@@ -45,3 +45,7 @@ html {
     padding-top: 200px;
     text-align: center;
 }
+.required:after{
+  content:" *";
+      color: red;  
+}

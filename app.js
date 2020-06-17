@@ -28,8 +28,20 @@ const userSchema= new mongoose.Schema({
   username:String,
   password:String,
   googleId:String,
-  firstName:String,
-  lastName:String
+  employeeCode:String,
+  title:String,
+  surName:String,
+  middleName:String,
+  lastName:String,
+  displayName:String,
+  emailId:String,
+  mobileNUmber:String,
+  alternateEmailId:String,
+  emergencyContactNo:String,
+  gender:String,
+  department:String,
+  designation:String,
+  employeeType:String
   //username : { type: String,sparse:true}
 });
 
@@ -56,7 +68,7 @@ passport.use(new GoogleStrategy({
     userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo'
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
+    //console.log(profile);
     User.findOrCreate({ googleId: profile.id }, function (err, user) {
       return cb(err, user);
     });
@@ -76,7 +88,7 @@ app.get("/register",function(req,res){
   res.render("register");
 });
 app.get("/login",function(req,res){
-
+res.render("login");
 });
 app.post("/register",function(req,res){
 User.register({username:req.body.username},req.body.password,function(err,user){
@@ -101,16 +113,13 @@ app.post("/login",function(req,res){
   }
   else{
   passport.authenticate("local")(req,res,function(){
-    res.redirect("/");
+    res.redirect("/user");
   });
 }
 });
 
 });
-app.post("/logout",function(req,res){
-req.logout();
-res.redirect("/");
-});
+
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
 );
@@ -118,7 +127,7 @@ app.get('/auth/google/researchpublications',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/details');
+    res.redirect('/intermediate');
   });
 app.get("/details",function(req,res){
 if(req.isAuthenticated()){
@@ -126,7 +135,7 @@ if(req.isAuthenticated()){
 }
 else{
   console.log("not authenticated");
-  res.render("/register");
+  res.render("register");
 }
 });
 app.post("/details",function(req,res){
@@ -135,12 +144,53 @@ app.post("/details",function(req,res){
   console.log(err);
   else{
     if(Founduser){
-    Founduser.firstName=req.body.firstName;
+    Founduser.employeeCode=req.body.employeeCode;
+    Founduser.title=req.body.title;
+    Founduser.surName=req.body.surName;
+    Founduser.middleName=req.body.middleName;
     Founduser.lastName=req.body.lastName;
+    Founduser.displayName=req.body.displayName;
+    Founduser.emailId=req.body.emailId;
+    Founduser.mobileNUmber=req.body.mobileNUmber;
+    Founduser.alternateEmailId=req.body.alternateEmailId;
+    Founduser.emergencyContactNo=req.body.emergencyContactNo;
+    Founduser.gender=req.body.gender;
+    Founduser.department=req.body.department;
+    Founduser.designation=req.body.designation;
+    Founduser.employeeType=req.body.employeeType;
     Founduser.save(function(){
-      res.send("successsfully saved");
+      res.redirect("/user");
     });
   }
 }
  });
+});
+app.get("/user",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("user",{user:req.user});
+  }
+  else{
+    console.log("not authenticated");
+    res.render("register");
+  }
+});
+app.get("/intermediate",function(req,res){
+User.findById(req.user._id,function(err,Founduser){
+  if(err)
+  console.log(err);
+  else{
+    if(Founduser){
+    if(Founduser.department){
+      res.redirect("/user");
+    }
+    else{
+      res.redirect("/details");
+    }
+    }
+  }
+});
+});
+app.get("/logout",function(req,res){
+  req.logout();
+  res.redirect("/");
 });
