@@ -24,8 +24,9 @@ app.use(passport.session());
 
 mongoose.connect("mongodb://localhost:27017/researchuserDB",{useNewUrlParser:true,useUnifiedTopology: true});
 mongoose.set("useCreateIndex",true);
+mongoose.set('useFindAndModify', false);
 const userSchema= new mongoose.Schema({
-  username:String,
+  email:String,
   password:String,
   googleId:String,
   employeeCode:String,
@@ -41,7 +42,8 @@ const userSchema= new mongoose.Schema({
   gender:String,
   department:String,
   designation:String,
-  employeeType:String
+  employeeType:String,
+  publication:[{name:String,author:String}]
   //username : { type: String,sparse:true}
 });
 
@@ -135,7 +137,7 @@ if(req.isAuthenticated()){
 }
 else{
   console.log("not authenticated");
-  res.render("register");
+  res.render("/");
 }
 });
 app.post("/details",function(req,res){
@@ -171,7 +173,7 @@ app.get("/user",function(req,res){
   }
   else{
     console.log("not authenticated");
-    res.render("register");
+    res.redirect("/");
   }
 });
 app.get("/intermediate",function(req,res){
@@ -193,4 +195,29 @@ User.findById(req.user._id,function(err,Founduser){
 app.get("/logout",function(req,res){
   req.logout();
   res.redirect("/");
+});
+app.get("/publication",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("publication");
+  }
+  else{
+    console.log("not authenticated");
+    res.redirect("/");
+  }
+});
+//req.user._id
+app.post("/publication",function(req,res){
+  var newPublication={name:req.body.titleOfThePaper,author:req.body.listOfAuthors};
+  User.findOneAndUpdate(
+     { _id: req.user._id },
+     { $push: { publication:newPublication} },
+    function (error, success) {
+          if (error) {
+              console.log(error);
+              res.send("unable to find user");
+          } else {
+              console.log(success);
+              res.redirect("/user");
+          }
+      });
 });

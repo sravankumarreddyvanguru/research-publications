@@ -1,0 +1,79 @@
+<%- include("partials/header"); -%>
+<h1>Publication</h1>
+<form class="publication" action="/publication" method="post">
+  <label class="required" for="PublicationType">Publication type</label>
+    <select name="publicationType" id="PublicationType">
+      <option value="journal">Journal</option>
+      <option value="conference">Conference</option>
+      <option value="book">Book</option>
+      <option value="book chapter name">Book Chapter Name</option>
+      <option value="patent">Patent</option>
+    </select>
+<br> <br>
+<label class="required" for="PublicationCategory">Publication Category</label>
+  <select name="publicationCategory" id="PublicationCategory">
+    <option value="national">National</option>
+    <option value="international">International</option>
+    </select>
+<br> <br>
+<label class="required" for="Title">Title Of The Paper</label>
+<br>
+<input  name="titleOfThePaper" id="Title" size="25" required>
+<br> <br>
+<label class="required" for="Authors">List Of Authors(in the order on paper)</label>
+<br>
+<input  name="listOfAuthors" id="Authors" size="25" required>
+<br> <br>
+<label class="required" for="Conferece/Journal">Conferece/Journal in which paper is published</label>
+<br>
+<input  name="conference/journal" id="Conferece/Journal" size="25" required>
+<br> <br>
+<label class="required" for="PageNos">Volume Issued Page Nos</label>
+<br>
+<input  name="volumePageNos" id="PageNos" size="25" required>
+<br> <br>
+<label class="required" for="Date">Date Of Publication</label>
+<br>
+  <input name="dateOfPublication" type="date" id="Date">
+<br> <br>
+<label class="required" for="ISBN/ISSN">ISSN/ISBN No.</label>
+<br>
+<input type="tel" name="isbn/issn" id="ISBN/ISSN" pattern="[0-9]{10}" size="25" required>
+<br><br>
+<label class="required" for="ImpactFactor">Impact Factor</label>
+<br>
+<input  name="impactFactor" id="ImpactFactor" size="25" required>
+<br> <br>
+<label class="required" for="Indexed">Indexed in.</label>
+<br>
+<input  name="indexedIn" id="Indexed" size="25" required>
+<br> <br>
+<label class="required" for="DocumentName">Supporting document for indexing.</label>
+<br>
+<input  name="documentForIndexing" id="DocumentName" size="25" required>
+<br> <br>
+<label class="required" for="Institute">Institute associated at the time of publiaction.</label>
+<br>
+<input  name="institute" id="Institute" size="25" required>
+<br> <br>
+<label class="required" for="NoOfCitiations">No Of Citiations</label>
+<br>
+<input  name="noOfCitiations" id="NoOfCitiations" size="25" required>
+<br> <br>
+<label class="required" for="UgcListed">Is UGC Listed?</label>
+  <select name="ugcListed" id="UgcListed">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+    </select>
+<br> <br>
+<label class="required" for="DocumentForUGCListing">Supporting Document For Ugc Listing.</label>
+<br>
+<input  name="documentForUGCListing" id="DocumentForUGCListing" size="25" required>
+<br> <br>
+
+<button type="submit" name="button">Save</button>
+</form>
+<a href="/user"><button type="button" name="close">Close</button></a>
+<br> <br>
+<a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+<%- include("partials/footer"); -%>
