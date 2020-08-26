@@ -1,0 +1,140 @@
+html,body {
+  background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+  -moz-background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+  -webkit-background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+  -o-background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin-top: 1.875em;
+}
+
+.multistep-container {
+  max-width: 38.125em;
+  margin: 0 auto;
+}
+
+.multistep-container .active-button {
+  display: table;
+  margin: auto;
+  padding-left: 0;
+  overflow: hidden;
+  margin-bottom: 1.25em;
+}
+
+.multistep-container .active-button li{
+  display: inline-block;
+  width: 9em;
+}
+
+.multistep-container .active-button li .round-btn {
+  width: 1.875em;
+  height:1.875em;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: block;
+  color: #000;
+  text-align: center;
+  font-family: 'poppins';
+  font-weight: 500;
+  line-height: 1.875em;
+  max-width: 100%;
+  margin:auto;
+  position: relative;
+  z-index: 1;
+}
+
+.multistep-container .active-button li.active .round-btn {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.multistep-container .active-button li:not(:first-child) .round-btn:before {
+  width: 9.25em;
+  height:0.1875em;
+  content: '';
+  background-color: #ccc;
+  left: -8.125em;
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  position: absolute;
+  z-index: -1;
+}
+
+.multistep-container .active-button li.active:not(:first-child) .round-btn:before {
+  background-color: var(--pink);
+}
+
+.multistep-container .multistep-form-area {
+  background-color: var(--white);
+  margin-top: 1.5625em;
+  box-shadow: 0 0 0.3125em rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 0 0.3125em rgba(0,0,0,0.5);
+  -o-box-shadow: 0 0 0.3125em rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 0.3125em rgba(0,0,0,0.5);
+  position: relative;
+  overflow:hidden;
+  min-height: 34em;
+  max-height: 34em;
+}
+
+.multistep-container .multistep-form-area .form-box{
+  position: absolute;
+  top: 1.5625em;
+  left: 1.5625em;
+}
+
+.multistep-container .multistep-form-area .form-box h4{
+
+  font-family: 'montserrat';
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  margin-top: 1.25em;
+  text-align: center;
+}
+
+.multistep-container .multistep-form-area .form-box label{
+
+  font-family: 'robotto';
+  font-weight: 500;
+  font-size: 0.9375em;
+}
+
+.multistep-container .multistep-form-area .form-box:nth-child(2),
+.multistep-container .multistep-form-area .form-box:nth-child(3),
+.multistep-container .multistep-form-area .form-box:nth-child(4) {
+  display: none;
+}
+
+.multistep-container .multistep-form-area .form-box .button-row .next,
+.multistep-container .multistep-form-area .form-box .button-row .previous,
+.multistep-container .multistep-form-area .form-box .button-row .submit{
+  background-color: var(--pink);
+  border: 0;
+  box-shadow: none;
+  padding: 0.4375em 1.875em;
+  min-width: 6.25em;
+  border-radius: 1.25em;
+  color: var(--white);
+  font-family: 'robotto';
+  font-weight: 500;
+}
+
+.multistep-container .multistep-form-area .form-box .button-row .submit{
+  background-color:var(--purple);
+}
+
+.multistep-container .multistep-form-area .form-box .button-row {
+  display: table;
+  margin: auto;
+  margin-top: 1.25em;
+}
+

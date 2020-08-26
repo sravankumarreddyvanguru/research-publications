@@ -1,0 +1,95 @@
+html,body{
+    background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+    -moz-background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+    -webkit-background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+    -o-background: url('https://image.shutterstock.com/image-photo/items-business-on-light-background-260nw-1322319941.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    /* min-height: 100vh; */
+    font-family: 'Numans', sans-serif;
+}
+    
+.container{
+    height: 100%;
+    align-content: center;
+}
+    
+.card{
+    height: 23.125em;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 25em;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+    
+.social_icon span{
+    font-size: 3.75em;
+    margin-left: 0.625em;
+    color: #FFC312;
+}
+    
+.social_icon span:hover{
+    color: white;
+    cursor: pointer;
+}
+    
+.card-header h3{
+    color: white;
+}
+    
+.social_icon{
+    position: absolute;
+    right: 1.25em;
+    top: -2.8125em;
+}
+    
+.input-group-prepend span{
+    width: 3.125em;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+}
+    
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important; 
+    -moz-box-shadow: 0 0 0 0 !important;
+    -webkit-box-shadow: 0 0 0 0 !important;
+    -o-box-shadow: 0 0 0 0 !important;  
+}
+    
+.remember{
+    color: white;
+}
+    
+.remember input
+    {
+    width: 1.25em;
+    height: 1.25em;
+    margin-left: 0.9375em;
+    margin-right: 0.3125em;
+}
+    
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 6.25em;
+}
+    
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+    
+.links{
+    color: white;
+}
+    
+.links a{
+    margin-left: 0.25em;
+}
+.full{
+    height:100%;
+}

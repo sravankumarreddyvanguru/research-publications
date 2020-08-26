@@ -26,8 +26,6 @@ mongoose.connect("mongodb://localhost:27017/researchuserDB",{useNewUrlParser:tru
 mongoose.set("useCreateIndex",true);
 mongoose.set('useFindAndModify', false);
 const userSchema= new mongoose.Schema({
-  email:String,
-  password:String,
   googleId:String,
   employeeCode:String,
   title:String,
@@ -83,7 +81,7 @@ app.listen(3000,function(){
 });
 
 app.get("/",function(req,res){
-  res.render("home");
+  res.render("login");
 });
 
 app.get("/register",function(req,res){
@@ -100,7 +98,32 @@ User.register({username:req.body.username},req.body.password,function(err,user){
     }
     else{
       passport.authenticate("local")(req, res, function() {
-      res.redirect("/details");
+        User.findById(req.user._id,function(err,Founduser){
+         if(err)
+         console.log(err);
+         else{
+           if(Founduser){
+           Founduser.employeeCode=req.body.employeeCode;
+           Founduser.title=req.body.title;
+           Founduser.surName=req.body.surName;
+           Founduser.middleName=req.body.middleName;
+           Founduser.lastName=req.body.lastName;
+           Founduser.displayName=req.body.displayName;
+           Founduser.emailId=req.body.emailId;
+           Founduser.mobileNUmber=req.body.mobileNUmber;
+           Founduser.alternateEmailId=req.body.alternateEmailId;
+           Founduser.emergencyContactNo=req.body.emergencyContactNo;
+           Founduser.gender=req.body.gender;
+           Founduser.department=req.body.department;
+           Founduser.designation=req.body.designation;
+           Founduser.employeeType=req.body.employeeType;
+           Founduser.save(function(){
+             res.redirect("/user");
+           });
+         }
+       }
+        });
+    
  });
     }
 });
@@ -108,17 +131,20 @@ User.register({username:req.body.username},req.body.password,function(err,user){
 app.post("/login",function(req,res){
   const user=new User({
     username:req.body.username,
-    password:req.user.password
+    password:req.body.password
   });
-  req.login(user, function(err) {
-  if (err) { console.log(err);
+
+  req.login(user, function(err){
+    if (err) { console.log(err);
+    }
+    else{
+    passport.authenticate("local")(req,res,function(){
+
+      res.redirect("/user");
+    });
   }
-  else{
-  passport.authenticate("local")(req,res,function(){
-    res.redirect("/user");
   });
-}
-});
+
 
 });
 
@@ -140,33 +166,7 @@ else{
   res.render("/");
 }
 });
-app.post("/details",function(req,res){
- User.findById(req.user._id,function(err,Founduser){
-  if(err)
-  console.log(err);
-  else{
-    if(Founduser){
-    Founduser.employeeCode=req.body.employeeCode;
-    Founduser.title=req.body.title;
-    Founduser.surName=req.body.surName;
-    Founduser.middleName=req.body.middleName;
-    Founduser.lastName=req.body.lastName;
-    Founduser.displayName=req.body.displayName;
-    Founduser.emailId=req.body.emailId;
-    Founduser.mobileNUmber=req.body.mobileNUmber;
-    Founduser.alternateEmailId=req.body.alternateEmailId;
-    Founduser.emergencyContactNo=req.body.emergencyContactNo;
-    Founduser.gender=req.body.gender;
-    Founduser.department=req.body.department;
-    Founduser.designation=req.body.designation;
-    Founduser.employeeType=req.body.employeeType;
-    Founduser.save(function(){
-      res.redirect("/user");
-    });
-  }
-}
- });
-});
+
 app.get("/user",function(req,res){
   if(req.isAuthenticated()){
     res.render("user",{user:req.user});
@@ -176,22 +176,7 @@ app.get("/user",function(req,res){
     res.redirect("/");
   }
 });
-app.get("/intermediate",function(req,res){
-User.findById(req.user._id,function(err,Founduser){
-  if(err)
-  console.log(err);
-  else{
-    if(Founduser){
-    if(Founduser.department){
-      res.redirect("/user");
-    }
-    else{
-      res.redirect("/details");
-    }
-    }
-  }
-});
-});
+
 app.get("/logout",function(req,res){
   req.logout();
   res.redirect("/");

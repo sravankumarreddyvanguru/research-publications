@@ -16,13 +16,15 @@
     <option value="international">International</option>
     </select>
 <br> <br>
-<label class="required" for="Title">Title Of The Paper</label>
+<label class="required" for="Title">Full Title Of The Paper</label>
 <br>
-<input  name="titleOfThePaper" id="Title" size="25" required>
+<textarea   name="titleOfThePaper" id="Title" size="25" required ></textarea>
+
 <br> <br>
 <label class="required" for="Authors">List Of Authors(in the order on paper)</label>
 <br>
-<input  name="listOfAuthors" id="Authors" size="25" required>
+<textarea  name="listOfAuthors" id="Authors" size="25" required  ></textarea>
+
 <br> <br>
 <label class="required" for="Conferece/Journal">Conferece/Journal in which paper is published</label>
 <br>
@@ -30,7 +32,8 @@
 <br> <br>
 <label class="required" for="PageNos">Volume Issued Page Nos</label>
 <br>
-<input  name="volumePageNos" id="PageNos" size="25" required>
+
+<textarea name="volumePageNos" id="PageNos" rows="2" cols="25" required  ></textarea>
 <br> <br>
 <label class="required" for="Date">Date Of Publication</label>
 <br>
@@ -38,7 +41,7 @@
 <br> <br>
 <label class="required" for="ISBN/ISSN">ISSN/ISBN No.</label>
 <br>
-<input type="tel" name="isbn/issn" id="ISBN/ISSN" pattern="[0-9]{10}" size="25" required>
+<input type="tel" name="isbn/issn" id="ISBN/ISSN" pattern="[0-9]{4}-[0-9]{4}" placeholder="1234-5345" size="25" required>
 <br><br>
 <label class="required" for="ImpactFactor">Impact Factor</label>
 <br>
@@ -46,7 +49,13 @@
 <br> <br>
 <label class="required" for="Indexed">Indexed in.</label>
 <br>
-<input  name="indexedIn" id="Indexed" size="25" required>
+<select name="indexedIn" id="Indexed">
+  <option value="SCOPUS">SCOPUS</option>
+  <option value="Google Scholar">Google Scholar</option>
+  <option value="Web Of Science">Web Of Science</option>
+  </select>
+
+
 <br> <br>
 <label class="required" for="DocumentName">Supporting document for indexing.</label>
 <br>

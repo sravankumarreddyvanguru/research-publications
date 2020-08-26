@@ -1,27 +1,82 @@
-<%- include("partials/header"); -%>
-<h1>Login</h1>
-<form action="/login" method="post">
-    <label for="email">Email</label>
-    <br>
-    <input  name="username" type="email" size="25" placeholder="sravan@xyz.com">
-<br>
-  <label for="password">Password</label>
-  <br>
+<html lang="en">
 
-  <input  type="password"  name="password" size="25">
-  <br>
-<button type="submit" name="button">Submit</button>
-</form>
-<div class="col-sm-4">
- <div class="card social-block">
-   <div class="card-body">
-     <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-       <i class="fab fa-google"></i>
-       Sign Up with Google
-     </a>
-   </div>
- </div>
-</div>
+<head>
+  <meta charset="utf-8" />
 
+  <meta name="viewport" content="initial-scale = 1.0 ,
+                user-scalable = yes ,
+                 width = device-width" />
 
-<%- include("partials/footer"); -%>
+  <title>VNR-Login</title>
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+
+  <link rel="stylesheet" href="CSS/loginform.css">
+</head>
+
+<body>
+
+  <form  action="/login" method="post">
+    <div class="container" style="padding-top: 120px;padding-left:200px;">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card">
+          <div class="card-header">
+            <h3>Sign In</h3>
+            <div class="d-flex justify-content-end social_icon">
+              <span><i class="fa fa-facebook-square"></i></span>
+              <span><i class="fa fa-google-plus-square"></i></span>
+            </div>
+          </div>
+          <div class="card-body">
+            <form action="/login" method="post">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+
+                <input type="text" name="username" class="form-control" placeholder="Employee number">
+
+              </div>
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-key"></i></span>
+                </div>
+                <input type="password" name="password" class="form-control" placeholder="password">
+              </div>
+              <div class="row align-items-center remember">
+                <input type="checkbox">Remember Me
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Login" class="btn float-right login_btn">
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links">
+              Don't have an account?<a href="/register">Sign Up</a>
+            </div>
+            <div class="d-flex justify-content-center">
+              <a href="#">Forgot your password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <script src="node_modules/jquery/dist/jquery.slim.min.js" defer></script>
+
+  <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+
+</body>
+
+</html>

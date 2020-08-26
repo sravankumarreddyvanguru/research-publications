@@ -47,5 +47,5 @@ html {
 }
 .required:after{
   content:" *";
-      color: red;  
+      color: red;
 }
