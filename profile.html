@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="inital-scale = 1.0 , user-scalable = yes , width = device-width "
+    />
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Lecturers Panel</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-social/bootstrap-social.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="public/css/Dashboard.css" />
+  </head>
+
+  <body>
+    <!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+      <div class="media d-flex align-items-center">
+        <div class="media-body">
+          <h4 class="m-0">VNR VJIET</h4>
+          <p class="font-weight-light text-muted mb-0"></p>
+        </div>
+      </div>
+    </div>
+  
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+  
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic bg-light">
+                  <i class="fa fa-user mr-3 text-primary fa-fw"></i>
+                  Profile
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="publish.html" class="nav-link text-dark font-italic">
+                  <i class="fa fa-paper-plane-o mr-3 text-primary fa-fw"></i>
+                  Publish
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
+                  Logout
+              </a>
+      </li>
+    </ul>
+  
+    <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Data Representation</p>
+  
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                  Pie chart
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                  Bar chart
+              </a>
+      </li>
+    </ul>
+  </div>
+  <!-- End vertical navbar -->
+  
+  
+  <!-- Page content holder -->
+  <div class="page-content p-5" id="content">
+    <!-- Toggle button -->
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+  
+    <!-- Demo content -->
+
+    <h2 style = "color: blueviolet;text-align: center;"><strong><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Your Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></strong><i class = "fa fa-edit" style="color: blue; text-align: left;"></i></h2>
+    <br/>
+    <form>
+        <div class="form-group row">
+          <label for="Title" class="offset-md-2 col-md-2 col-form-label required" style="color: green;font-size: 20px;"><strong><i>Display Name:</i></iDisplay></strong></label>
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="" id="" placeholder="Enter display Name here" disabled>
+          </div>
+          <div class = "col-md-2">
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="" class="offset-md-2 col-md-2 col-form-label required" style="color: green;font-size: 20px;"><strong><i>Change Password:</i></iDisplay></strong></label>
+            <div class="col-md-6">
+              <input type="password" class="form-control" name="" id="" placeholder="Enter Your Password" disabled>
+            </div>
+            <div class = "col-md-2">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="Title" class="offset-md-2 col-md-2 col-form-label required" style="color: green;font-size: 20px;"><strong><i>Date of Birth:</i></iDisplay></strong></label>
+            <div class="col-md-6">
+              <input type="date" class="form-control" name="" id="" placeholder="Enter Date of Birth" disabled>
+            </div>
+            <div class = "col-md-2">
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label for="" class="offset-md-2 col-md-2 col-form-label required" style="color: green;font-size: 20px;"><strong><i>Email:</i></iDisplay></strong></label>
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="" id="" placeholder="Enter Email here" disabled>
+            </div>
+            <div class = "col-md-2">
+            </div>
+          </div> 
+
+          <div class="form-group row">
+            <label for="" class="offset-md-2 col-md-2 col-form-label required" style="color: green;font-size: 20px;"><strong><i>Phone Number:</i></iDisplay></strong></label>
+            <div class="col-md-6">
+              <input type="tel" class="form-control" name="" id="" placeholder="Enter Phone Number" disabled>
+            </div>
+            <div class = "col-md-2">
+            </div>
+          </div> 
+
+          <div class="form-group row">
+            <label for="" class="offset-md-2 col-md-2 col-form-label required" style="color: green;font-size: 20px;"><strong><i>Photo</i></strong></label>
+            <div class="col-md-6">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="" id="">
+                <label class="custom-file-label" for="">Choose file</label>
+              </div>
+            </div>
+            <div class = "col-md-2">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-10 offset-md-6">
+              <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+          </div>
+
+    </form>
+  </div>
+  <!-- End demo content -->
+  
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js" defer></script>
+
+    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+
+    <script
+      src="node_modules/bootstrap/dist/js/bootstrap.min.js"
+      defer
+    ></script>
+
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+      </script>
+
+    <script>
+          $(document).ready(function(){
+              $("#sidebarCollapse").on('click',function(){
+                  $("#sidebar").toggleClass('active');
+              });
+          });
+    </script>
+  </body>
+</html>

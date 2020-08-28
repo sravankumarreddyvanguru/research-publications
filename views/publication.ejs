@@ -9,18 +9,28 @@
 
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
+<<<<<<< HEAD
   <title>publish</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+=======
+  <title>HOD Panel</title>
+
+  <!-- Bootstrap CSS -->
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
 
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+=======
+  <link rel="stylesheet" type="text/css" href="CSS/Dashboard.css" />
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
 </head>
 
 <body>
@@ -39,25 +49,41 @@
 
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
+<<<<<<< HEAD
         <a href="/user" class="nav-link text-dark font-italic">
+=======
+        <a href="Hod.html" class="nav-link text-dark font-italic">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
           <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
           Home
         </a>
       </li>
       <li class="nav-item">
+<<<<<<< HEAD
         <a href="/profile" class="nav-link text-dark font-italic">
+=======
+        <a href="#" class="nav-link text-dark font-italic">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
           <i class="fa fa-user mr-3 text-primary fa-fw"></i>
           Profile
         </a>
       </li>
       <li class="nav-item active">
+<<<<<<< HEAD
         <a href="/publication" class="nav-link text-dark font-italic bg-light">
+=======
+        <a href="publish.html" class="nav-link text-dark font-italic bg-light">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
           <i class="fa fa-paper-plane-o mr-3 text-primary fa-fw"></i>
           Publish
         </a>
       </li>
       <li class="nav-item">
+<<<<<<< HEAD
         <a href="/logout" class="nav-link text-dark font-italic">
+=======
+        <a href="#" class="nav-link text-dark font-italic">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
           <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
           Logout
         </a>
@@ -97,6 +123,7 @@
         class="fa fa-bars mr-2"></i><mdall class="text-uppercase font-weight-bold">Toggle</mdall></button>
 
     <!-- Demo content -->
+<<<<<<< HEAD
 
 
     <h3 style="text-align: center;color: purple;">Congrats on new publication&nbsp;&nbsp;&nbsp;&nbsp;<i
@@ -105,6 +132,16 @@
     <h5 style="text-align: center;color: darkgreen;"><i>Please fill the details here:</i></h5>
     <br/>
 
+=======
+    <%- include("partials/header"); -%>
+    
+    <h3 style="text-align: center;color: purple;">Congrats on new publication&nbsp;&nbsp;&nbsp;&nbsp;<i
+        class="fa fa-gift" style="color: blue;"></i></h3>
+    <br/>  
+    <h5 style="text-align: center;color: darkgreen;"><i>Please fill the details here:</i></h5>
+    <br/>
+    
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
     <form class="publication" action="/publication" method="post">
       <div class="form-group row">
         <label for="Title" class="col-md-2 col-form-label required"><strong>Title</strong></label>
@@ -115,7 +152,11 @@
       <div class="form-group row">
         <label for="PublicationType" class="col-md-2 col-form-label required"><strong><i>Publication Type</i></strong></label>
         <div class="col-md-10">
+<<<<<<< HEAD
           <select class = "form-control" name="publicationType" id="PublicationType">
+=======
+          <select class = "form-control" name="PublicationType" id="PublicationType">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
             <option value="journal">Journal</option>
             <option value="conference">Conferece</option>
             <option value="book">Book</option>
@@ -136,7 +177,11 @@
       <div class="form-group row">
         <label for="Conferece/Journal" class="col-md-2 col-form-label required"><strong><i>Conference/Journal in which Paper was published</i></strong></label>
         <div class="col-md-10">
+<<<<<<< HEAD
           <input type="year" class="form-control" name="conferenceJournal" id="Conferece/Journal">
+=======
+          <input type="year" class="form-control" name="conference/journal" id="Conferece/Journal">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
         </div>
       </div>
       <div class="form-group row">
@@ -150,26 +195,47 @@
         <div class="col-md-10">
           <input type="text" class="form-control" name="listOfAuthors" id="Authors" placeholder="1.">
         </div>
+<<<<<<< HEAD
 
+=======
+        <div class="offset-md-2 col-md-10">
+          <input type="text" class="form-control" name="listOfAuthors" id="Authors" placeholder="2.">
+        </div>
+        <div class="offset-md-2 col-md-10">
+          <input type="text" class="form-control" name="listOfAuthors" id="Authors" placeholder="3.">
+        </div>
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
       </div>
 
       <div class="form-row">
         <div class="form-group row col-md-7">
           <label for="PageNos" class = "col-form-label col-md-4 required"><strong><i>No of Pages</i></strong></label>
+<<<<<<< HEAD
           <input type="text" class="form-control col-md-8" name="volumePageNos" id="PageNos">
+=======
+          <input type="number" class="form-control col-md-8" name="volumePageNos" id="PageNos">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
         </div>
         <div class="form-group row col-md-1">
         </div>
         <div class="form-group row col-md-4">
           <label for="ISBN/ISSN" class = "col-form-label col-md-4 required"><strong><i>ISBN number</i></strong></label>
+<<<<<<< HEAD
           <input class="form-control col-md-8" type="text" name="isbn/issn" id="ISBNorISSN" pattern="[0-9]{4}-[0-9]{4}">
+=======
+          <input class="form-control col-md-8" type="tel" name="isbn/issn" id="ISBN/ISSN" pattern="[0-9]{4}-[0-9]{4}">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group row col-md-7">
           <label for="ImpactFactor" class = "col-form-label col-md-4 required"><strong><i>Impact Factor</i></strong></label>
+<<<<<<< HEAD
           <input type="text" class="form-control col-md-8" name="impactFactor" id="ImpactFactor">
+=======
+          <input type="number" class="form-control col-md-8" name="impactFactor" id="ImpactFactor">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
         </div>
         <div class = "form-group row col-md-1">
 
@@ -188,8 +254,13 @@
         <label for="DocumentName" class="col-md-2 col-form-label required"><strong><i>Supporting document for indexing</i></strong></label>
         <div class="col-md-10">
           <div class="custom-file">
+<<<<<<< HEAD
             <input type="text" class="form-control" name="documentForIndexing" id="DocumentName">
 
+=======
+            <input type="file" class="custom-file-input" name="documentForIndexing" id="DocumentName">
+            <label class="custom-file-label" for="DocumentName">Choose file</label>
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
           </div>
         </div>
       </div>
@@ -204,7 +275,11 @@
       <div class="form-group row">
         <label for="NoOfCitiations" class="col-md-2 col-form-label required"><strong><i>Enter No of Citiations</i></strong></label>
         <div class="col-md-10">
+<<<<<<< HEAD
           <input type="text" class="form-control" name="noOfCitiations" id="NoOfCitiations" placeholder="Enter No of Citiations">
+=======
+          <input type="number" class="form-control" name="noOfCitiations" id="NoOfCitiations" placeholder="Enter No of Citiations">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
         </div>
       </div>
 
@@ -213,13 +288,21 @@
           <legend class="col-form-label col-md-2 pt-0"><strong><i>UGC listed?</i></strong></legend>
           <div class="col-md-10">
             <div class="form-check form-check-inline">
+<<<<<<< HEAD
               <input class="form-check-input" type="radio" name="ugcListed" id="UgcListed" value="Yes" checked>
+=======
+              <input class="form-check-input" type="radio" name="ugcListed" id="UgcListed" value="option1" checked>
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
               <label class="form-check-label" for="UgcListed" style="font-size: 20px;">
                 Yes
               </label>
             </div>
             <div class="form-check form-check-inline">
+<<<<<<< HEAD
               <input class="form-check-input" type="radio" name="ugcListed" id="UgcListed" value="No">
+=======
+              <input class="form-check-input" type="radio" name="ugcListed" id="UgcListed" value="option2">
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
               <label class="form-check-label" for="UgcListed "style="font-size: 20px;">
                 No
               </label>
@@ -232,8 +315,13 @@
         <label for="DocumentForUGCListing" class="col-md-2 col-form-label required"><strong><i>Supporting document for UGC</i></strong></label>
         <div class="col-md-10">
           <div class="custom-file">
+<<<<<<< HEAD
             <input type="text" class="form-control" name="documentForUGCListing" id="DocumentForUGCListing">
 
+=======
+            <input type="file" class="custom-file-input" name="documentForUGCListing" id="DocumentForUGCListing">
+            <label class="custom-file-label" for="DocumentForUGCListing">Choose file</label>
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
           </div>
         </div>
       </div>
@@ -252,8 +340,13 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
+<<<<<<< HEAD
     </form>
 
+=======
+    </form>  
+    <%- include("partials/footer"); -%> -->
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
 
 
 
@@ -281,4 +374,8 @@
   </script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> eb22d8b660c61eb47d0d14b4c7c1a1b004235775
