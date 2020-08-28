@@ -41,7 +41,24 @@ const userSchema= new mongoose.Schema({
   department:String,
   designation:String,
   employeeType:String,
-  publication:[{name:String,author:String}]
+  publication:[{
+    titleOfThePaper:String,
+    publicationType:String,
+    publicationCategory :String,
+    conferenceJournal:String,
+    dateOfPublication:Date,
+  listOfAuthors:String,
+    volumePageNos:String,
+  ISBNorISSN:String,
+    impactFactor:String,
+    indexedIn:String,
+    documentForIndexing:String,
+    institute:String,
+    noOfCitiations:String,
+    ugcListed:String,
+    DocumentForUGCListing:String
+  }
+]
   //username : { type: String,sparse:true}
 });
 
@@ -90,6 +107,15 @@ app.get("/register",function(req,res){
 app.get("/login",function(req,res){
 res.render("login");
 });
+app.get("/profile",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("profile",{user:req.user});
+  }
+  else{
+    console.log("not authenticated");
+    res.redirect("/");
+  }
+});
 app.post("/register",function(req,res){
 User.register({username:req.body.username},req.body.password,function(err,user){
   if(err){
@@ -123,7 +149,7 @@ User.register({username:req.body.username},req.body.password,function(err,user){
          }
        }
         });
-    
+
  });
     }
 });
@@ -192,7 +218,23 @@ app.get("/publication",function(req,res){
 });
 //req.user._id
 app.post("/publication",function(req,res){
-  var newPublication={name:req.body.titleOfThePaper,author:req.body.listOfAuthors};
+  var newPublication={titleOfThePaper:req.body.titleOfThePaper,
+    publicationType:req.body.publicationType,
+    publicationCategory :req.body.publicationCategory,
+    conferenceJournal:req.body.conferenceJournal,
+    dateOfPublication:req.body.dateOfPublication,
+  listOfAuthors:req.body.listOfAuthors,
+    volumePageNos:req.body.volumePageNos,
+  ISBNorISSN:req.body.ISBNorISSN,
+    impactFactor:req.body.impactFacto,
+    indexedIn:req.body.indexedIn,
+    documentForIndexing:req.body.documentForIndexing,
+    institute:req.body.institute,
+    noOfCitiations:req.body.noOfCitiations,
+    ugcListed:req.body.ugcListed,
+    DocumentForUGCListing:req.body.DocumentForUGCListing
+
+  };
   User.findOneAndUpdate(
      { _id: req.user._id },
      { $push: { publication:newPublication} },

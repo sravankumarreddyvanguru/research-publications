@@ -28,7 +28,7 @@ html,body {
 
 .multistep-container .active-button li{
   display: inline-block;
-  width: 9em;
+  width: 8.8em;
 }
 
 .multistep-container .active-button li .round-btn {
@@ -137,4 +137,3 @@ html,body {
   margin: auto;
   margin-top: 1.25em;
 }
-
