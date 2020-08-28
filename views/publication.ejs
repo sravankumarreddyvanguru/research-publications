@@ -1,88 +1,286 @@
-<%- include("partials/header"); -%>
-<h1>Publication</h1>
-<form class="publication" action="/publication" method="post">
-  <label class="required" for="PublicationType">Publication type</label>
-    <select name="publicationType" id="PublicationType">
-      <option value="journal">Journal</option>
-      <option value="conference">Conference</option>
-      <option value="book">Book</option>
-      <option value="book chapter name">Book Chapter Name</option>
-      <option value="patent">Patent</option>
-    </select>
-<br> <br>
-<label class="required" for="PublicationCategory">Publication Category</label>
-  <select name="publicationCategory" id="PublicationCategory">
-    <option value="national">National</option>
-    <option value="international">International</option>
-    </select>
-<br> <br>
-<label class="required" for="Title">Full Title Of The Paper</label>
-<br>
-<textarea   name="titleOfThePaper" id="Title" size="25" required ></textarea>
+<!DOCTYPE html>
 
-<br> <br>
-<label class="required" for="Authors">List Of Authors(in the order on paper)</label>
-<br>
-<textarea  name="listOfAuthors" id="Authors" size="25" required  ></textarea>
+<html lang="en">
 
-<br> <br>
-<label class="required" for="Conferece/Journal">Conferece/Journal in which paper is published</label>
-<br>
-<input  name="conference/journal" id="Conferece/Journal" size="25" required>
-<br> <br>
-<label class="required" for="PageNos">Volume Issued Page Nos</label>
-<br>
+<head>
+  <meta charset="utf-8" />
 
-<textarea name="volumePageNos" id="PageNos" rows="2" cols="25" required  ></textarea>
-<br> <br>
-<label class="required" for="Date">Date Of Publication</label>
-<br>
-  <input name="dateOfPublication" type="date" id="Date">
-<br> <br>
-<label class="required" for="ISBN/ISSN">ISSN/ISBN No.</label>
-<br>
-<input type="tel" name="isbn/issn" id="ISBN/ISSN" pattern="[0-9]{4}-[0-9]{4}" placeholder="1234-5345" size="25" required>
-<br><br>
-<label class="required" for="ImpactFactor">Impact Factor</label>
-<br>
-<input  name="impactFactor" id="ImpactFactor" size="25" required>
-<br> <br>
-<label class="required" for="Indexed">Indexed in.</label>
-<br>
-<select name="indexedIn" id="Indexed">
-  <option value="SCOPUS">SCOPUS</option>
-  <option value="Google Scholar">Google Scholar</option>
-  <option value="Web Of Science">Web Of Science</option>
-  </select>
+  <meta name="viewport" content="inital-scale = 1.0 , user-scalable = yes , width = device-width " />
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+  <title>HOD Panel</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+
+  <link rel="stylesheet" type="text/css" href="CSS/Dashboard.css" />
+</head>
+
+<body>
+  <!-- Vertical navbar -->
+  <div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+      <div class="media d-flex align-items-center">
+        <div class="media-body">
+          <h4 class="m-0">VNR VJIET</h4>
+          <p class="font-weight-light text-muted mb-0"></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 mdall pb-4 mb-0">Main</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="Hod.html" class="nav-link text-dark font-italic">
+          <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+          <i class="fa fa-user mr-3 text-primary fa-fw"></i>
+          Profile
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="publish.html" class="nav-link text-dark font-italic bg-light">
+          <i class="fa fa-paper-plane-o mr-3 text-primary fa-fw"></i>
+          Publish
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+          <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
+          Logout
+        </a>
+      </li>
+    </ul>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 mdall py-4 mb-0">Data Representation</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+          <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+          Pie chart
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+          <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+          Bar chart
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+          <i class="fa fa-star mr-3 text-primary fa-fw"></i>
+          Leaderboard
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- End vertical navbar -->
 
 
-<br> <br>
-<label class="required" for="DocumentName">Supporting document for indexing.</label>
-<br>
-<input  name="documentForIndexing" id="DocumentName" size="25" required>
-<br> <br>
-<label class="required" for="Institute">Institute associated at the time of publiaction.</label>
-<br>
-<input  name="institute" id="Institute" size="25" required>
-<br> <br>
-<label class="required" for="NoOfCitiations">No Of Citiations</label>
-<br>
-<input  name="noOfCitiations" id="NoOfCitiations" size="25" required>
-<br> <br>
-<label class="required" for="UgcListed">Is UGC Listed?</label>
-  <select name="ugcListed" id="UgcListed">
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-    </select>
-<br> <br>
-<label class="required" for="DocumentForUGCListing">Supporting Document For Ugc Listing.</label>
-<br>
-<input  name="documentForUGCListing" id="DocumentForUGCListing" size="25" required>
-<br> <br>
+  <!-- Page content holder -->
+  <div class="page-content p-5" id="content">
+    <!-- Toggle button -->
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-md px-4 mb-4"><i
+        class="fa fa-bars mr-2"></i><mdall class="text-uppercase font-weight-bold">Toggle</mdall></button>
 
-<button type="submit" name="button">Save</button>
-</form>
-<a href="/user"><button type="button" name="close">Close</button></a>
-<br> <br>
-<a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
-<%- include("partials/footer"); -%>
+    <!-- Demo content -->
+    <%- include("partials/header"); -%>
+    
+    <h3 style="text-align: center;color: purple;">Congrats on new publication&nbsp;&nbsp;&nbsp;&nbsp;<i
+        class="fa fa-gift" style="color: blue;"></i></h3>
+    <br/>  
+    <h5 style="text-align: center;color: darkgreen;"><i>Please fill the details here:</i></h5>
+    <br/>
+    
+    <form class="publication" action="/publication" method="post">
+      <div class="form-group row">
+        <label for="Title" class="col-md-2 col-form-label required"><strong>Title</strong></label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="titleOfThePaper" id="Title" placeholder="Title of the paper">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="PublicationType" class="col-md-2 col-form-label required"><strong><i>Publication Type</i></strong></label>
+        <div class="col-md-10">
+          <select class = "form-control" name="PublicationType" id="PublicationType">
+            <option value="journal">Journal</option>
+            <option value="conference">Conferece</option>
+            <option value="book">Book</option>
+            <option value="patent">Patent</option>
+            <option value="book chapter name">Book chapter Name</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="publicationCategory" class="col-md-2 col-form-label required"><strong><i>Publication Category</i></strong></label>
+        <div class="col-md-10">
+          <select class = "form-control" name="publicationCategory" id="PublicationCategory">
+            <option value = "national">National</option>
+            <option value = "international">International</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Conferece/Journal" class="col-md-2 col-form-label required"><strong><i>Conference/Journal in which Paper was published</i></strong></label>
+        <div class="col-md-10">
+          <input type="year" class="form-control" name="conference/journal" id="Conferece/Journal">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Date" class="col-md-2 col-form-label required"><strong><i>Date of Publication</i></strong></label>
+        <div class="col-md-10">
+          <input type="date" class="form-control" name="dateOfPublication" id="Date" placeholder="date">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Authors" class="col-md-2 col-form-label required"><strong><i>List of authors</i></strong></label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="listOfAuthors" id="Authors" placeholder="1.">
+        </div>
+        <div class="offset-md-2 col-md-10">
+          <input type="text" class="form-control" name="listOfAuthors" id="Authors" placeholder="2.">
+        </div>
+        <div class="offset-md-2 col-md-10">
+          <input type="text" class="form-control" name="listOfAuthors" id="Authors" placeholder="3.">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group row col-md-7">
+          <label for="PageNos" class = "col-form-label col-md-4 required"><strong><i>No of Pages</i></strong></label>
+          <input type="number" class="form-control col-md-8" name="volumePageNos" id="PageNos">
+        </div>
+        <div class="form-group row col-md-1">
+        </div>
+        <div class="form-group row col-md-4">
+          <label for="ISBN/ISSN" class = "col-form-label col-md-4 required"><strong><i>ISBN number</i></strong></label>
+          <input class="form-control col-md-8" type="tel" name="isbn/issn" id="ISBN/ISSN" pattern="[0-9]{4}-[0-9]{4}">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group row col-md-7">
+          <label for="ImpactFactor" class = "col-form-label col-md-4 required"><strong><i>Impact Factor</i></strong></label>
+          <input type="number" class="form-control col-md-8" name="impactFactor" id="ImpactFactor">
+        </div>
+        <div class = "form-group row col-md-1">
+
+        </div>
+        <div class="form-group row col-md-4">
+          <label for="Indexed" class = "col-form-label col-md-4 required"><strong><i>Indexed in</i></strong></label>
+          <select class = "form-control col-md-8" name="indexedIn" id="Indexed">
+            <option value="SCOPUS">SCOPUS</option>
+            <option value="Google Scholar">Google Scholar</option>
+            <option value="Web Of Science">Web Of Science</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="DocumentName" class="col-md-2 col-form-label required"><strong><i>Supporting document for indexing</i></strong></label>
+        <div class="col-md-10">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="documentForIndexing" id="DocumentName">
+            <label class="custom-file-label" for="DocumentName">Choose file</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Institute" class="col-md-2 col-form-label required"><strong><i>Institute associated at time of publication</i></strong></label>
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="institute" id="Institute" placeholder="Enter Institute">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="NoOfCitiations" class="col-md-2 col-form-label required"><strong><i>Enter No of Citiations</i></strong></label>
+        <div class="col-md-10">
+          <input type="number" class="form-control" name="noOfCitiations" id="NoOfCitiations" placeholder="Enter No of Citiations">
+        </div>
+      </div>
+
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-md-2 pt-0"><strong><i>UGC listed?</i></strong></legend>
+          <div class="col-md-10">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="ugcListed" id="UgcListed" value="option1" checked>
+              <label class="form-check-label" for="UgcListed" style="font-size: 20px;">
+                Yes
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="ugcListed" id="UgcListed" value="option2">
+              <label class="form-check-label" for="UgcListed "style="font-size: 20px;">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group row">
+        <label for="DocumentForUGCListing" class="col-md-2 col-form-label required"><strong><i>Supporting document for UGC</i></strong></label>
+        <div class="col-md-10">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="documentForUGCListing" id="DocumentForUGCListing">
+            <label class="custom-file-label" for="DocumentForUGCListing">Choose file</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck1" checked>
+            <label class="form-check-label" for="gridCheck1">
+              <strong><i>Are You Sure to Submit</i></strong>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-10 offset-md-6">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>  
+    <%- include("partials/footer"); -%> -->
+
+
+
+  </div>
+  <!-- End demo content -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js" defer></script>
+
+  <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+    </script>
+
+  <script>
+    $(document).ready(function () {
+      $("#sidebarCollapse").on('click', function () {
+        $("#sidebar").toggleClass('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
