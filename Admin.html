@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="inital-scale = 1.0 , user-scalable = yes , width = device-width "
+    />
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Admin Panel</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-social/bootstrap-social.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="CSS/Dashboard.css" />
+  </head>
+
+  <body>
+    <!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+      <div class="media d-flex align-items-center">
+        <div class="media-body">
+          <h4 class="m-0">VNR VJIET</h4>
+          <p class="font-weight-light text-muted mb-0"></p>
+        </div>
+      </div>
+    </div>
+  
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+  
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic bg-light">
+                  <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                  Home
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="upload.html" class="nav-link text-dark font-italic">
+                  <i class="fa fa-user mr-3 text-primary fa-fw"></i>
+                  Profile
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-times mr-3 text-primary fa-fw"></i>
+                  Remove
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
+                  Logout
+              </a>
+      </li>
+    </ul>
+  
+    <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Data Representation</p>
+  
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+                  Pie chart
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+                  Bar chart
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark font-italic">
+                  <i class="fa fa-star mr-3 text-primary fa-fw"></i>
+                  Leaderboard
+              </a>
+      </li>
+    </ul>
+  </div>
+  <!-- End vertical navbar -->
+  
+  
+  <!-- Page content holder -->
+  <div class="page-content p-5" id="content">
+    <!-- Toggle button -->
+    <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+
+    <!-- Demo content -->
+
+    <h4 style="padding-left: 80px;padding-top: 100px;color: green;"><----------ENTER DISPLAY NAME OF USER TO GET DETAILS----------></h4>
+
+    <form class="form-inline" style = "padding-top:50px;padding-left: 150px;">
+        <input
+            class="form-control mr-sm-1"
+            type="search"
+            placeholder="Mohammed Ahmed Khan...."
+            aria-label="Search"
+            style="width:550px;height: 50px;"
+            not req
+        />
+        
+        <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+            style="width:100px;height:50px;"
+        >
+            Search
+        </button>
+    </form>
+    
+
+  </div>
+  <!-- End demo content -->
+  
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js" defer></script>
+
+    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+
+    <script
+      src="node_modules/bootstrap/dist/js/bootstrap.min.js"
+      defer
+    ></script>
+
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+      </script>
+
+    <script>
+          $(document).ready(function(){
+              $("#sidebarCollapse").on('click',function(){
+                  $("#sidebar").toggleClass('active');
+              });
+          });
+    </script>
+  </body>
+</html>
