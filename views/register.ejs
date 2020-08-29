@@ -12,6 +12,8 @@
   <title>VNR-REGISTER</title>
 
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
@@ -20,382 +22,369 @@
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
 
   <link rel="stylesheet" href="css/registerform.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 <form action="/register" method="post">
-  <div class = "container">
+    <div class="container">
 
-    <div class = "row">
 
-        <div class = "col-xl-12">
+      <div class="row">
 
-            <div class = "multistep-container">
+        <div class="col-xl-12">
 
-                <div class = "multistep-form-area">
+          <div class="multistep-container">
 
-                    <div class = "form-box">
+            <div class="multistep-form-area">
 
-                      <ul class = "active-button">
+              <div class="form-box">
 
-                        <li class = "active">
+                <ul class="active-button">
 
-                          <span class = "round-btn">1</span>
+                  <li class="active">
 
-                        </li>
+                    <span class="round-btn">1</span>
 
-                        <li>
+                  </li>
 
-                          <span class = "round-btn">2</span>
+                  <li>
 
-                        </li>
+                    <span class="round-btn">2</span>
 
-                        <li>
+                  </li>
 
-                          <span class = "round-btn">3</span>
+                  <li>
 
-                        </li>
+                    <span class="round-btn">3</span>
 
-                        <li>
+                  </li>
 
-                          <span class = "round-btn">4</span>
+                  <li>
 
-                        </li>
+                    <span class="round-btn">4</span>
 
-                      </ul>
+                  </li>
 
-                      <h4> Personal Details </h4>
+                </ul>
 
+                <h4> Personal Details </h4>
+                <div class="form-group ">
 
+                  <label for="Surname" class="required">Surname</label>
 
-                        <div class = "form-group ">
-
-                          <label for ="Surname" class="required" >Surname</label>
-
-                          <input type = "text" name = "surName" id = "Surname"  class = "form-control" required>
-
-                      </div>
-
-                      <div class = "form-group">
-
-                        <label for = "Middlename">Middle Name</label>
-
-                        <input type = "text" name="middleName" id = "Middlename"  class = "form-control" required>
-
-                    </div>
-
-                    <div class = "form-group">
-
-                      <label for = "Lastname">Last Name</label>
-
-                      <input type = "text" name = "lastName" id = "Lastname" pclass = "form-control" required>
-
-                  </div>
-
-                  <div class = "form-group">
-
-                    <label for = "gender">Gender</label>
-
-                     <select class = "custom-select myinput" name = "gender" id = "gender">
-
-                        <option value = "male">Male</option>
-                        <option value = "female">Female</option>
-
-                      </select>
-
-                  </div>
-
-                  <div class = "button-row">
-
-                    <input type = "button" value="Next" class="next">
-
-                  </div>
-
-
-
-
-                    </div>
-
-                    <div class = "form-box">
-
-                      <ul class = "active-button">
-
-                        <li class = "active">
-
-                          <span class = "round-btn">1</span>
-
-                        </li>
-
-                        <li class = "active">
-
-                          <span class = "round-btn">2</span>
-
-                        </li>
-
-                        <li>
-
-                          <span class = "round-btn">3</span>
-
-                        </li>
-
-                        <li>
-
-                          <span class = "round-btn">4</span>
-
-                        </li>
-
-                      </ul>
-
-                      <h4> Professional Details[1] </h4>
-
-
-
-                        <div class = "form-group">
-
-                            <label for = "Displayname">Display Name</label>
-
-                            <input type = "text" name = "displayName" id = "Displayname"  class = "form-control" required>
-
-                        </div>
-
-
-                    <div class = "form-group">
-
-                      <label for = "">Employee Id</label>
-
-                      <input type = "text" name = "username" id = "username"  class = "form-control" required>
-
-                  </div>
-
-                  <div class = "form-group">
-
-                    <label for = "Password">Password</label>
-
-                    <input type = "password" name = "password" id = "Password" class = "form-control" required>
+                  <input type="text" name="surName" id="Surname" class="form-control" required>
 
                 </div>
 
-                  <div class = "form-group form-inline">
+                <div class="form-group">
 
-                    <label for = "title">Title</label>
+                  <label for="Middlename" class="required">Middle Name</label>
 
-                        <label for = "Dr" style="padding:0 20px;font-size: 20px;">Dr</label>
-                        <input type = "radio" name = "title" id = "Dr"  class = "form-control" value="Dr">
-                        &nbsp;&nbsp;&nbsp;
-                        <label for = "Mr" style="padding:0 20px;font-size: 20px;">Mr</label>
-                        <input type = "radio" name = "title" id = "Mr"  class = "form-control" value="Mr">
-                        &nbsp;&nbsp;&nbsp;
-                        <label for = "Ms" style="padding:0 20px;font-size: 20px;">Ms</label>
-                        <input type = "radio" name = "title" id = "Ms"  class = "form-control" value="Ms">
-                        &nbsp;&nbsp;&nbsp;
-                        <label for = "Mrs" style="padding:0 20px;font-size: 20px;">Mrs</label>
-                        <input type = "radio" name = "title" id = "Mrs"  class = "form-control" value="Mrs">
+                  <input type="text" name="middleName" id="Middlename" class="form-control" required>
 
-                    </div>
+                </div>
 
-                    <div class = "form-group form-inline">
+                <div class="form-group">
 
-                      <label for = "emtype">Employee Type</label>
+                  <label for="Lastname" class="required">Last Name</label>
 
-                          <label for = "teaching" style="padding:0 30px;font-size: 20px;">Teaching</label>
-                          <input type = "radio" name = "employeeType" id = "teaching"  class = "form-control" value="Teaching">
-                          &nbsp;&nbsp;&nbsp;
-                          <label for = "non-teaching" style="padding:0 30px;font-size: 20px;">Non Teaching</label>
-                          <input type = "radio" name = "employeeType" id = "non-teaching"  class = "form-control" value="Non Teaching">
+                  <input type="text" name="lastName" id="Lastname" class="form-control" required>
 
-                      </div>
+                </div>
 
-                  <div class = "button-row">
+                <div class="form-group">
 
-                    <input type = "button" value="Previous" class="previous">
+                  <label for="gender" class="required">Gender</label>
 
-                    <input type = "button" value="Next" class="next">
+                  <select class="custom-select myinput" name="gender" id="gender">
 
-                  </div>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
 
+                  </select>
 
+                </div>
 
+                <div class="button-row">
 
-                    </div>
-
-                    <div class = "form-box">
-
-                      <ul class = "active-button">
-
-                        <li class = "active">
-
-                          <span class = "round-btn">1</span>
-
-                        </li>
-
-                        <li class = "active">
-
-                          <span class = "round-btn">2</span>
-
-                        </li>
-
-                        <li class = "active">
-
-                          <span class = "round-btn">3</span>
-
-                        </li>
-
-                        <li>
-
-                          <span class = "round-btn">4</span>
-
-                        </li>
-
-                      </ul>
-
-                      <h4> Professional Details[2] </h4>
-
-                      <form action = "">
-
-                    <div class = "form-group">
-
-                      <label for = "Department">Department</label>
-
-                       <select class = "custom-select myinput" name = "department" id = "Department">
-
-                          <option value = "CSE">CSE</option>
-                          <option value = "IT">IT</option>
-                          <option value = "CSBS">CSBS</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class = "form-group">
-
-                      <label for = "designation">Designation</label>
-
-                       <select class = "custom-select myinput" name = "designation" id = "Designation">
-
-                          <option value = "Asst.Professor">Assistant Professor</option>
-                          <option value = "Assoc.Professor">Associate Professor</option>
-                          <option value = "Professor">Professor</option>
-                        </select>
-
-                    </div>
-
-
-
-
-
-
-                  <div class = "form-group">
-
-                    <label for = "img">Image</label>
-
-                    <input type = "file" name = "image" id = "img"  class = "form-control" required>
+                  <input type="button" value="Next" class="next">
 
                 </div>
 
 
-                  <div class = "button-row">
-
-                    <input type = "button" value="Previous" class="previous">
-
-                    <input type = "button" value="Next" class="next">
-
-                  </div>
-
-
-                      </form>
-
-                    </div>
-
-
-                    <div class = "form-box">
-
-                      <ul class = "active-button">
-
-                        <li class = "active">
-
-                          <span class = "round-btn">1</span>
-
-                        </li>
-
-                        <li class = "active">
-
-                          <span class = "round-btn">2</span>
-
-                        </li>
-
-                        <li class = "active">
-
-                          <span class = "round-btn">3</span>
-
-                        </li>
-
-                        <li class = "active">
-
-                          <span class = "round-btn">4</span>
-
-                        </li>
-
-                      </ul>
-
-                      <h4> Contact Details </h4>
 
 
 
-                    <div class = "form-group">
 
-                      <label for = "Email">Email id</label>
 
-                      <input type = "email" name = "emailId" id = "Email" placeholder = "sravan@xyz.com" class = "form-control">
 
-                  </div>
+              </div>
 
-                  <div class = "form-group">
+              <div class="form-box">
 
-                    <label for = "AlternateEmail"> Alternate Email id:</label>
+                <ul class="active-button">
 
-                    <input type = "email" name = "alternateEmailId" id = "AlternateEmail"  class = "form-control">
+                  <li class="active">
+
+                    <span class="round-btn">1</span>
+
+                  </li>
+
+                  <li class="active">
+
+                    <span class="round-btn">2</span>
+
+                  </li>
+
+                  <li>
+
+                    <span class="round-btn">3</span>
+
+                  </li>
+
+                  <li>
+
+                    <span class="round-btn">4</span>
+
+                  </li>
+
+                </ul>
+
+                <h4> Professional Details[1] </h4>
+                <div class="form-group">
+
+                  <label for="Displayname" class="required">Display Name</label>
+
+                  <input type="text" name="displayName" id="Displayname" class="form-control" required>
 
                 </div>
 
-                  <div class = "form-group">
 
-                    <label for = "Mobile">Mobile Number 1</label>
+                <div class="form-group">
 
-                    <input type = "tel" name = "mobileNUmber" id = "Mobile" class = "form-control">
+                  <label for="username" class="required">Employee Id</label>
 
-                  </div>
-
-                  <div class = "form-group">
-
-                    <label for = "contactNo">Emergency Contact Number </label>
-
-                    <input type = "tel" name = "emergencyContactNo" id = "contactNo class = "form-control">
-
-                  </div>
-
-                  <div class = "button-row">
-
-                    <input type = "button" value="Previous" class="previous">
-
-                <button type="submit" name="button">submit</button>
-
-                  </div>
-
-
-
-
-                    </div>
+                  <input type="text" name="username" id="username" class="form-control" required>
 
                 </div>
+
+                <div class="form-group">
+
+                  <label for="Password" class="required">Password</label>
+
+                  <input type="password" name="password" id="Password" class="form-control" required>
+
+                </div>
+
+                <div class="form-group form-inline">
+
+                  <label for="title" class="required">Title</label>
+
+                  <label for="Dr" style="padding:0 20px;font-size: 20px;">Dr</label>
+                  <input type="radio" name="title" id="Dr" class="form-control" value="Dr">
+                  &nbsp;&nbsp;&nbsp;
+                  <label for="Mr" style="padding:0 20px;font-size: 20px;">Mr</label>
+                  <input type="radio" name="title" id="Mr" class="form-control" value="Mr">
+                  &nbsp;&nbsp;&nbsp;
+                  <label for="Ms" style="padding:0 20px;font-size: 20px;">Ms</label>
+                  <input type="radio" name="title" id="Ms" class="form-control" value="Ms">
+                  &nbsp;&nbsp;&nbsp;
+                  <label for="Mrs" style="padding:0 20px;font-size: 20px;">Mrs</label>
+                  <input type="radio" name="title" id="Mrs" class="form-control" value="Mrs">
+
+                </div>
+
+                <div class="form-group form-inline">
+
+                  <label for="emtype" class="required">Employee Type</label>
+
+                  <label for="teaching" style="padding:0 30px;font-size: 20px;">Teaching</label>
+                  <input type="radio" name="employeeType" id="teaching" class="form-control" value="Teaching">
+                  &nbsp;&nbsp;&nbsp;
+                  <label for="non-teaching" style="padding:0 30px;font-size: 20px;">Non Teaching</label>
+                  <input type="radio" name="employeeType" id="non-teaching" class="form-control" value="Non Teaching">
+
+                </div>
+
+                <div class="button-row">
+
+                  <input type="button" value="Previous" class="previous">
+
+                  <input type="button" value="Next" class="next">
+
+                </div>
+
+
+
+
+              </div>
+
+              <div class="form-box">
+
+                <ul class="active-button">
+
+                  <li class="active">
+
+                    <span class="round-btn">1</span>
+
+                  </li>
+
+                  <li class="active">
+
+                    <span class="round-btn">2</span>
+
+                  </li>
+
+                  <li class="active">
+
+                    <span class="round-btn">3</span>
+
+                  </li>
+
+                  <li>
+
+                    <span class="round-btn">4</span>
+
+                  </li>
+
+                </ul>
+
+                <h4> Professional Details[2] </h4>
+                <div class = "form-group">
+
+                                      <label for = "Department" class="required">Department</label>
+
+                                       <select class = "custom-select myinput" name = "department" id = "Department">
+
+                                          <option value = "CSE">CSE</option>
+                                          <option value = "IT">IT</option>
+                                          <option value = "CSBS">CSBS</option>
+
+                                        </select>
+
+                                    </div>
+
+                                    <div class = "form-group">
+
+                                      <label for = "designation" class="required">Designation</label>
+
+                                       <select class = "custom-select myinput" name = "designation" id = "Designation">
+
+                                          <option value = "Asst.Professor">Assistant Professor</option>
+                                          <option value = "Assoc.Professor">Associate Professor</option>
+                                          <option value = "Professor">Professor</option>
+                                        </select>
+
+                                    </div>
+
+
+
+
+
+
+                                  <div class = "form-group">
+
+                                    <label for = "img" class="required">Image</label>
+
+                                    <input type = "file" name = "image" id = "img"  class = "form-control" required>
+
+                                </div>
+
+
+                                  <div class = "button-row">
+
+                                    <input type = "button" value="Previous" class="previous">
+
+                                    <input type = "button" value="Next" class="next">
+
+                                  </div>
+
+
+              </div>
+
+
+              <div class="form-box">
+
+                <ul class="active-button">
+
+                  <li class="active">
+
+                    <span class="round-btn">1</span>
+
+                  </li>
+
+                  <li class="active">
+
+                    <span class="round-btn">2</span>
+
+                  </li>
+
+                  <li class="active">
+
+                    <span class="round-btn">3</span>
+
+                  </li>
+
+                  <li class="active">
+
+                    <span class="round-btn">4</span>
+
+                  </li>
+
+                </ul>
+
+                <h4> Contact Details </h4>
+
+                <div class="form-group">
+
+                  <label for="Email" class="required">Email id</label>
+
+                  <input type="email" name="emailId" id="Email" placeholder="sravan@xyz.com" class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="AlternateEmail" class="required"> Alternate Email id:</label>
+
+                  <input type="email" name="alternateEmailId" id="AlternateEmail" class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="Mobile" class="required">Mobile Number </label>
+
+                  <input type="tel" name="mobileNUmber" id="Mobile" class="form-control">
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="contactNo" class="required">Emergency Contact Number </label>
+
+                  <input type="tel" name="emergencyContactNo" id="contactNo" class = " form-control">
+                </div>
+                <div class="button-row">
+                  <input type="button" value="Previous" class="previous">
+                  <button type="submit" name="button">submit</button>
+                </div>
+
+
+
+              </div>
 
             </div>
 
+          </div>
+
         </div>
 
-    </div>
+      </div>
 
-  </div>
-  </form>
+    </div>
+</form>
 
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 
@@ -403,20 +392,17 @@
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <script
-			  src="https://code.jquery.com/jquery-3.5.1.js"
-			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 
 
-  <script type = "text/javascript">
-    $(document).ready(function(){
-      $(".multistep-container .form-box .button-row .next").click(function(){
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".multistep-container .form-box .button-row .next").click(function() {
         $(this).parents(".form-box").fadeOut('fast');
         $(this).parents(".form-box").next().fadeIn('fast');
       });
-      $(".multistep-container .form-box .button-row .previous").click(function(){
+      $(".multistep-container .form-box .button-row .previous").click(function() {
         $(this).parents(".form-box").fadeOut('fast');
         $(this).parents(".form-box").prev().fadeIn('fast');
       });
